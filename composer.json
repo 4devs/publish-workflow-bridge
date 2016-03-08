@@ -1,0 +1,33 @@
+{
+    "name": "fdevs/publish-workflow-bridge",
+    "license": "MIT",
+    "type": "library",
+    "description": "Publish workflow library",
+    "homepage": "https://github.com/4devs/publish-workflow-bridge",
+    "keywords": [
+        "publish workflow",
+        "doctrine",
+        "voter"
+    ],
+    "authors": [
+        {
+            "name": "Samusev Andrey",
+            "email": "andrey@4devs.pro",
+            "homepage": "http://andrey.4devs.io/"
+        },
+        {
+            "name": "4devs Community",
+            "homepage": "https://github.com/4devs/publish-workflow-bridge/contributors"
+        }
+    ],
+    "require-dev": {},
+    "require": {
+        "php": ">=5.4",
+        "fdevs/publish-workflow": "~0.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "FDevs\\Bridge\\PublishWorkflow\\": ""
+        }
+    }
+}
