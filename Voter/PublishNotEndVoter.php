@@ -5,7 +5,7 @@ namespace FDevs\Bridge\PublishWorkflow\Voter;
 use FDevs\PublishWorkflow\PublishEndReadInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 
-class PublishEndVoter extends AbstractPublishWorkflowVoter
+class PublishNotEndVoter extends AbstractPublishWorkflowVoter
 {
     /**
      * {@inheritdoc}
@@ -20,6 +20,6 @@ class PublishEndVoter extends AbstractPublishWorkflowVoter
      */
     protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
     {
-        return $this->publishWorkflow->isPublishStart($subject, $this->currentTime);
+        return $this->publishWorkflow->isPublishNotEnd($subject, $this->currentTime);
     }
 }

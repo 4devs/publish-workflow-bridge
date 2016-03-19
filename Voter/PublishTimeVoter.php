@@ -20,6 +20,6 @@ class PublishTimeVoter extends AbstractPublishWorkflowVoter
      */
     protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
     {
-        return $this->publishWorkflow->isPublishStart($subject, $this->currentTime) && $this->publishWorkflow->isPublishEnd($subject, $this->currentTime);
+        return $this->publishWorkflow->isPublishStart($subject, $this->currentTime) && $this->publishWorkflow->isPublishNotEnd($subject, $this->currentTime);
     }
 }
