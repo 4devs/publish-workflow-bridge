@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="f_devs_publish_workflow.voter.abstract.class">FDevs\Bridge\PublishWorkflow\Voter\AbstractPublishWorkflowVoter</parameter>
+        <parameter key="f_devs_publish_workflow.voter.publishable.class">FDevs\Bridge\PublishWorkflow\Voter\PublishableVoter</parameter>
+        <parameter key="f_devs_publish_workflow.voter.publish_time.class">FDevs\Bridge\PublishWorkflow\Voter\PublishTimeVoter</parameter>
+    </parameters>
+
+    <services>
+
+        <service id="f_devs_publish_workflow.voter.abstract" abstract="true" class="%f_devs_publish_workflow.voter.abstract.class%">
+            <argument type="service" id="f_devs_publish_workflow.publish_workflow" on-invalid="null"/>
+        </service>
+
+        <service id="f_devs_publish_workflow.voter.publishable"
+                 parent="f_devs_publish_workflow.voter.abstract"
+                 class="%f_devs_publish_workflow.voter.publishable.class%" public="false">
+            <tag name="security.voter" />
+        </service>
+        <service id="f_devs_publish_workflow.voter.publish_time"
+                 parent="f_devs_publish_workflow.voter.abstract"
+                 class="%f_devs_publish_workflow.voter.publish_time.class%" public="false">
+            <tag name="security.voter" />
+        </service>
+
+    </services>
+
+</container>

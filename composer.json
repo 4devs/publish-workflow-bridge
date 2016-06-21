@@ -20,7 +20,12 @@
             "homepage": "https://github.com/4devs/publish-workflow-bridge/contributors"
         }
     ],
-    "require-dev": {},
+    "require-dev": {
+        "symfony/security": "~2.8|~3.0",
+        "symfony/dependency-injection": "~2.8|~3.0",
+        "symfony/config": "~2.8|~3.0",
+        "doctrine/mongodb-odm": "~1.0"
+    },
     "require": {
         "php": ">=5.4",
         "fdevs/publish-workflow": "~0.1"

@@ -21,9 +21,9 @@ abstract class AbstractPublishWorkflowVoter extends Voter
      *
      * @param PublishWorkflow $publishWorkflow
      */
-    public function __construct(PublishWorkflow $publishWorkflow)
+    public function __construct(PublishWorkflow $publishWorkflow = null)
     {
-        $this->publishWorkflow = $publishWorkflow;
+        $this->publishWorkflow = $publishWorkflow ?: new PublishWorkflow();
         $this->currentTime = new \DateTime();
     }
 
